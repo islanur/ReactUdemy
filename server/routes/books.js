@@ -1,14 +1,26 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const mysql = require("mysql");
 
-const db = require("../config/db");
-
-console.log(db.user, db.password);
+const router = express.Router();
+const connectionPool = require("../database/connection-pool");
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
+  const book = {
+    author: "Masashi Kisimoto",
+    title: "Naruto",
+    published: "1991-01-01",
+  };
+
+  connectionPool
+    .getPool()
+    .query("INSERT INTO books SET ?", book, (err, result) => {
+      if (err) throw err;
+
+      console.log(result);
+    });
   res.send("Books List");
 });
 
