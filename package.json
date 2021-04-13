@@ -1,0 +1,21 @@
+{
+  "name": "reactudemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "cd server && nodemon start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/islanur/ReactUdemy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/islanur/ReactUdemy/issues"
+  },
+  "homepage": "https://github.com/islanur/ReactUdemy#readme"
+}
